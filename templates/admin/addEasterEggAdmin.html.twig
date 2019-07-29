@@ -1,0 +1,17 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <section class="row admin-form-container z-depth-2">
+        <div class="col s12 m6 offset-m3">
+            <h1>Add Easter Egg</h1>
+            {{ form_start(form) }}
+                {{ form_row(form.content) }}
+            <div>
+                <button type="submit" class="btn waves-effect">Valider</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
+

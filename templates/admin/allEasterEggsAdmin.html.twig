@@ -1,0 +1,46 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block body %}
+    <section class="row admin-all-table z-depth-2">
+        <div class="col s12 m8 offset-m2">
+            <h1>All Quotes</h1>
+            <table class="myTable stripe hover row-border order-column z-depth-2">
+                <thead>
+                <tr>
+                    <th>Add Date</th>
+                    <th>Content</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in easterEggs %}
+                    <tr>
+                        <td>{{ e.addDate|date('d-m-Y') }}</td>
+                        <td>{{ e.content|slice(0, 50) }}...</td>
+                        <td>
+                            <a href="{{ path('admin_edit_easteregg', {'id': e.id}) }}" title="Editer">
+                                <i class="small material-icons white green-text">edit</i>
+                            </a>
+                            <a href="{{ path('admin_delete_easteregg', {'id': e.id}) }}">
+                                <i class="small material-icons white red-text" title="Supprimer" onclick="return confirm('Etes-vous sur de vouloir supprimer ?')">delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('js/datatable.js') }}"></script>
+{% endblock %}
+

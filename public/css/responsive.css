@@ -1,0 +1,13 @@
+@media all and (max-width: 1000px) {
+    body{
+        background: url("../img/background/dandelion-1557110_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media all and (max-width: 600px){
+    body{
+        background-color: #9e622c;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+{% endblock %}
+{% block body %}
+
+    <section>
+        <div class="row admin-form-container z-depth-2">
+
+            <div class="col s12 m6 offset-m3 admin-add-form">
+                <h1>Add Quote</h1>
+                {{ form_start(form) }}
+                {{ form_row(form.frContent) }}
+                {{ form_row(form.enContent) }}
+                {{ form_row(form.author) }}
+                {{ form_row(form.releaseDate) }}
+
+                <div>
+                    <button type="submit" class="btn waves-effect">Valider</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+{% endblock %}

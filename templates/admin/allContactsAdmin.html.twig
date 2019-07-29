@@ -1,0 +1,49 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block body %}
+    <section class="row admin-all-table z-depth-2">
+        <div class="col s12 m8 offset-m2">
+            <h1>All Quotes</h1>
+            <table class="myTable stripe hover row-border order-column z-depth-2">
+                <thead>
+                <tr>
+                    <th>Send Date</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Subject</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in contacts %}
+                    <tr>
+                        <td>{{ c.sendDate|date('d-m-Y') }}</td>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.subject|slice(0, 50) }}...</td>
+                        <td>
+                            <a href="{{ path('admin_view_contact', {'id': c.id}) }}" title="Voir">
+                                <i class="small material-icons white blue-text">visibility</i>
+                            </a>
+                            <a href="{{ path('admin_validate_contact', {'id': c.id}) }}">
+                                <i class="small material-icons white green-text" title="Valider" onclick="return confirm('Etes-vous sur de vouloir valider ?')">check</i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('js/datatable.js') }}"></script>
+{% endblock %}
