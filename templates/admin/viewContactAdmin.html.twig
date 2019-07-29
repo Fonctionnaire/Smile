@@ -1,0 +1,33 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <section class="row admin-view-contact z-depth-2">
+        <div class="col s12 m6 offset-m3">
+            <p>Date de réception :</p>
+            <p>{{ contact.sendDate|date('d-m-Y h:i') }}</p>
+        </div>
+        <div class="col s12 m6 offset-m3">
+            <p>Nom :</p>
+            <p>{{ contact.name }}</p>
+        </div>
+        <div class="col s12 m6 offset-m3">
+            <p>E-mail :</p>
+            <p>{{ contact.email }}</p>
+        </div>
+        <div class="col s12 m6 offset-m3">
+            <p>Sujet :</p>
+            <p>{{ contact.subject }}</p>
+        </div>
+        <div class="col s12 m6 offset-m3">
+            <p>Message :</p>
+            <p>{{ contact.content }}</p>
+        </div>
+        <div class="col s12 m6 offset-m3">
+            <a href="{{ path('admin_all_contacts') }}" class="btn waves-effect">Retour</a>
+            <a href="{{ path('admin_validate_contact', {'id': contact.id}) }}" class="btn waves-effect green">
+                Valider le contact
+            </a>
+        </div>
+    </section>
+{% endblock %}
+

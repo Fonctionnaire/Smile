@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="fb-root"></div>
+    <div class="circular-sb">
+        {% if ee %}
+            {{ ee.content }}
+        {% endif %}
+    </div>
+    <div class="container">
+        <div id="vara-container"></div>
+
+
+
+        <!-- Social media -->
+        <div class="fb-share-button" data-href="https://dailycomforting.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdailycomfort.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Keep%20Smiling" data-size="large">Tweet</a>
+
+
+        <!-- Modal Structure -->
+        <div class="modal-link">
+            <a class="modal-trigger" href="#info">Informations</a>
+        </div>
+
+        <div id="info" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/vara.min.js') }}"></script>
+    {% if quote %}
+        <script>
+            var content = "{{ quote.frContent }}";
+            var author = "- {{ quote.author }}";
+            new Vara("#vara-container","{{ asset('fonts/Pacifico/PacificoSLO.json') }}",[{
+                text: content,
+            },{
+                text: author
+            }],{
+                duration:5000,
+                fontSize:42,
+                fontWeight: 'bold',
+                queued:true, // Boolean, Whether the animation should be in a queue,
+                delay:0,
+                height: 200
+            });
+        </script>
+    {% endif %}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
+    <script src="{{ asset('js/twitterShare.js') }}"></script>
+    <script src="{{ asset('js/fbShare.js') }}"></script>
+{% endblock %}
