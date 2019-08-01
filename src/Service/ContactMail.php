@@ -32,7 +32,7 @@ class ContactMail
     {
         $message = (new \Swift_Message($contact->getSubject()))
             ->setFrom('no-reply@dailycomforting.com')
-            ->setTo('contact@gailycomforting.com')
+            ->setTo('contact@dailycomforting.com')
             ->setBody(
                 $this->engine->render(
                     'email/contactMail.html.twig', [
