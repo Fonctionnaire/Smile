@@ -31,7 +31,7 @@ class ContactMail
     public function sendContactMail(Contact $contact)
     {
         $message = (new \Swift_Message($contact->getSubject()))
-            ->setFrom('contact@dailycomforting.com')
+            ->setFrom('no-reply@dailycomforting.com')
             ->setTo('contact@gailycomforting.com')
             ->setBody(
                 $this->engine->render(
