@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EasterEggRepository")
@@ -25,6 +26,11 @@ class EasterEgg
      * @ORM\Column(type="datetime")
      */
     private $addDate;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $enContent;
 
     public function __construct()
     {
@@ -56,6 +62,18 @@ class EasterEgg
     public function setAddDate(\DateTimeInterface $addDate): self
     {
         $this->addDate = $addDate;
+
+        return $this;
+    }
+
+    public function getEnContent(): ?string
+    {
+        return $this->enContent;
+    }
+
+    public function setEnContent(string $enContent): self
+    {
+        $this->enContent = $enContent;
 
         return $this;
     }

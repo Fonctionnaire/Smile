@@ -9,20 +9,23 @@ use App\Entity\EasterEgg;
 use App\Repository\EasterEggRepository;
 use App\Repository\QuoteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
 
     /**
-     * @Route("/", name="home", methods={"GET"})
+     * @Route("/{_locale}", name="home", methods={"GET"}, defaults={"_locale"="fr"}, requirements={"_locale"="%app.locales%"})
      */
-    public function home(QuoteRepository $quoteRepository, EasterEggRepository $easterEggRepository)
+    public function home(QuoteRepository $quoteRepository, EasterEggRepository $easterEggRepository, Request $request)
     {
+        $locale = $request->getLocale();
         $now = new \DateTime();
         $quote = $quoteRepository->findOneQuoteByDate($now);
         $ee = $easterEggRepository->findLastEasterEgg();
         return $this->render('home/home.html.twig', [
+            'locale' => $locale,
             'quote' => $quote,
             'ee' => $ee
         ]);
