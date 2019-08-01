@@ -28,7 +28,7 @@ class ContactMail
         $this->engine = $engine;
     }
 
-    public function sendContactMail(Contact $contact)
+    public function sendContactMail(Contact $contact, $locale)
     {
         $message = (new \Swift_Message($contact->getSubject()))
             ->setFrom('no-reply@dailycomforting.com')
@@ -36,7 +36,8 @@ class ContactMail
             ->setBody(
                 $this->engine->render(
                     'email/contactMail.html.twig', [
-                        'contact' => $contact
+                        'contact' => $contact,
+                        'locale' => $locale
                     ]
                 ),
                 'text/html'

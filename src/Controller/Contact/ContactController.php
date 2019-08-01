@@ -26,7 +26,7 @@ class ContactController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
 
-            $contactMail->sendContactMail($contact);
+            $contactMail->sendContactMail($contact, $locale);
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
