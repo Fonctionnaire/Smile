@@ -1,62 +1,57 @@
 {% extends 'base.html.twig' %}
-
+{% block lang %}{% if locale is same as('fr') %}fr{% else %}en{% endif %}{% endblock %}
 {% block body %}
     <div id="fb-root"></div>
+
     <div class="circular-sb">
+
         {% if ee %}
+            {% if locale is same as('fr') %}
             {{ ee.content }}
+                {% else %}
+                {{ ee.enContent }}
+                {% endif %}
         {% endif %}
+
     </div>
-    <div class="container">
-        <div id="vara-container"></div>
 
-
-
-        <!-- Social media -->
-        <div class="fb-share-button" data-href="https://dailycomforting.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdailycomfort.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
-
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Keep%20Smiling" data-size="large">Tweet</a>
-
-
-        <!-- Modal Structure -->
-        <div class="modal-link">
-            <a class="modal-trigger" href="#info">Informations</a>
-        </div>
-
-        <div id="info" class="modal bottom-sheet">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+    <section class="container">
+        <div class="row">
+            <div id="quote-block" class="col s12 m12 z-depth-3">
+                <div id="quote-content">
+                    {% if locale is same as('fr') %}
+                        <p class="quote-text">{{ quote.frContent }}</p>
+                    {% else %}
+                        <p>{{ quote.enContent }}</p>
+                    {% endif %}
+                    {% if quote.author %}
+                        <p class="quote-author">- {{ quote.author }}</p>
+                    {% endif %}
+                </div>
+                <hr>
+                <div id="quote-title">
+                    <h1>{% trans %}Garde le sourire !{% endtrans %} <img src="{{ asset('img/1024px-Face-smile.svg.png') }}" alt="smile"></h1>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <!-- Social media -->
+            <div id="social-block" class="col s12 m6 offset-m3">
+                <div class="fb-share-button" data-href="https://dailycomforting.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdailycomfort.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                <div class="tt-link">
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Keep%20Smiling" data-size="large">Tweet</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/modal.js') }}"></script>
-    <script src="{{ asset('js/vara.min.js') }}"></script>
-    {% if quote %}
-        <script>
-            var content = "{{ quote.frContent }}";
-            var author = "- {{ quote.author }}";
-            new Vara("#vara-container","{{ asset('fonts/Pacifico/PacificoSLO.json') }}",[{
-                text: content,
-            },{
-                text: author
-            }],{
-                duration:5000,
-                fontSize:42,
-                fontWeight: 'bold',
-                queued:true, // Boolean, Whether the animation should be in a queue,
-                delay:0,
-                height: 200
-            });
-        </script>
+
+    {% if locale is same as('fr') %}
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
+    {% else %}
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
     {% endif %}
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
     <script src="{{ asset('js/twitterShare.js') }}"></script>
-    <script src="{{ asset('js/fbShare.js') }}"></script>
 {% endblock %}

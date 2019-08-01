@@ -1,29 +1,70 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{% block lang %}{% endblock %}">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98634915-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-98634915-3');
+        </script>
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="title" content="{% trans %}Garde le sourire !{% endtrans %}">
+        <meta name="description" content="{% trans %}Parce que tu es unique et extraordinaire{% endtrans %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
         <meta property="og:url"           content="https://www.dailycomfort.com" />
         <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="" />
-        <meta property="og:description"   content="Your description" />
+        <meta property="og:title"         content="{% trans %}Garde le sourire !{% endtrans %}" />
+        <meta property="og:description"   content="{% trans %}Tu es unique et extraordinaire{% endtrans %}" />
         <meta property="og:image"         content="{{ asset('img/social/beach-1852945_800.jpg') }}" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% trans %}Garde le sourire !{% endtrans %}{% endblock %}</title>
         {% block stylesheets %}
             
             {% include 'styleAndScript/style.html.twig' %}
         {% endblock %}
     </head>
     <body>
+    <div id="flags-block">
+        <i class="small material-icons">language</i>
+        <div id="fr-flag">
+            <a href="{{ path('home', {'_locale': 'fr'}) }}">
+                <img src="{{ asset('img/flags/fr.svg') }}" alt="{% trans %}Drapeau français{% endtrans %}" title="Français">
+            </a>
+        </div>
+        <span>|</span>
+        <div id="gb-flag">
+            <a href="{{ path('home', {'_locale': 'en'}) }}">
+                <img src="{{ asset('img/flags/gb.svg') }}" alt="{% trans %}Drapeau anglais{% endtrans %}" title="English">
+            </a>
+        </div>
+    </div>
     <main class="main-wrapper">
         {% block body %}{% endblock %}
+
     </main>
+    <!-- Modal Structure -->
+    <div class="modal-link-block">
+        <a class="modal-trigger" href="#info">
+            <div class="modal-link">
+                Info
+            </div>
+        </a>
+    </div>
+    <div id="info" class="modal bottom-sheet">
+        <div class="modal-content">
+            <a href="{{ path('mentions_legales', {'_locale': locale}) }}" target="_blank">{% trans %}Mentions légales{% endtrans %}</a> -
+            <a href="{{ path('contact', {'_locale': locale}) }}">{% trans %}Nous contacter{% endtrans %}</a>
+        </div>
+    </div>
         {% block javascripts %}
             {% include 'styleAndScript/script.html.twig' %}
-
+            <script src="{{ asset('js/modal.js') }}"></script>
         {% endblock %}
     </body>
 </html>

@@ -16,7 +16,46 @@ body
     background-size: cover;
 }
 
+.modal
+{
+    height: 72px;
+}
+
+.modal-content
+{
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
 /* ==== HOMEPAGE ======= */
+#flags-block
+{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 150px;
+    display: flex;
+}
+
+#fr-flag, #gb-flag, #flags-block span
+{
+    padding-top: 5px;
+}
+
+#fr-flag, #fr-flag img, #gb-flag, #gb-flag img
+{
+    width: 30px;
+    height: 20px;
+    transition: 0.5s;
+}
+#fr-flag img:hover, #gb-flag img:hover
+{
+
+    border: 1px solid rgba(245, 124, 0, 0.7);
+}
+
+
 .circular-sb {
     width: 350px;
     border: 5px solid #039be5;
@@ -41,17 +80,17 @@ body
     background: rgba(255, 255, 255, 0.5);
 }
 
+.modal-link-block
+{
+    max-width: 200px;
+    margin: auto;
+}
+
 .modal-link
 {
     width: 200px;
     padding: 10px;
     text-align: center;
-    position: absolute;
-    bottom: 3%;
-    margin-right: auto;
-    margin-left: auto;
-    left: 0;
-    right: 0;
     font-family: 'Pacifico', cursive;
     font-size: 1.7em;
     border: 3px solid #039be5;
@@ -63,6 +102,125 @@ body
 {
     background: rgba(255, 255, 255, 1);
 }
+
+#quote-block
+{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    background: rgba(33, 33, 33, 0.2);
+    padding: 35px;
+    border: 5px groove rgba(15,15,15, 0.7);
+}
+
+#quote-block #quote-content
+{
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+}
+
+#quote-content .quote-author
+{
+    font-style: italic;
+}
+
+#quote-title
+{
+    padding-top: 15px;
+}
+
+#quote-block #quote-title
+{
+    text-align: center;
+}
+
+#quote-title h1
+{
+    font-family: 'Permanent Marker', cursive;
+    font-weight: bold;
+    color: #e65100;
+}
+
+#quote-title img
+{
+    width: 40px;
+    height: 40px;
+    margin-bottom: -10px;
+}
+
+#social-block
+{
+    display: flex;
+    justify-content: center;
+}
+
+.tt-link
+{
+    margin-left: 5px;
+}
+
+
+/* Contact */
+.contact-flash
+{
+    text-align: center;
+    background: #7cb342;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 1.8em;
+    padding-top: 7px;
+}
+
+.contact-block
+{
+    background: rgba(187, 222, 251, 0.8);
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.contact-block h1
+{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-block div
+{
+    margin-bottom: 30px;
+}
+
+.contact-block textarea
+{
+    height: 200px;
+    resize: none;
+    background: white;
+}
+
+#contact_consent i
+{
+    position: absolute;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: initial !important;
+    pointer-events: initial !important;
+    opacity: 100 !important;
+}
+
+.contact-block li
+{
+    color: red;
+}
+
+.contact-return-link
+{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 /* ======== ADMIN ======== */
 
 /* navigation */

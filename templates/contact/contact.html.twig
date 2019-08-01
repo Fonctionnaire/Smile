@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div >
+                {% for message in app.flashes('contact-success') %}
+                    <div class="flash-notice contact-flash">
+                        {{ message|trans }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <section class="container">
+        <div class="row contact-block z-depth-2">
+            <div class="col s12 m6 offset-m3">
+                <h1>{% trans %}Nous contacter{% endtrans %}</h1>
+                {{ form_start(form) }}
+                    <div>
+                        {{ form_label(form.name, 'Votre nom'|trans) }}
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                    <div>
+                        {{ form_label(form.email, 'Votre e-mail'|trans) }}
+                        {{ form_widget(form.email) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                <div>
+                    {{ form_label(form.subject, 'Sujet'|trans) }}
+                    {{ form_widget(form.subject) }}
+                    {{ form_errors(form.subject) }}
+                </div>
+                <div>
+                    {{ form_label(form.content, 'Message') }}
+                    {{ form_widget(form.content) }}
+                    {{ form_errors(form.content) }}
+                </div>
+                <div>
+                    <p id="contact_consent">{{ form_widget(form.consent) }} {% trans %}J'ai lu et j'accepte les conditions d'utilisation{% endtrans %}. <a href="{{  path('mentions_legales') }}" target="_blank" title="{%  trans %}Mentions légales{%  endtrans %}"><i class="material-icons">info_outline</i></a></p>
+                    {{ form_errors(form.consent) }}
+                </div>
+                <div>
+                    <button type="submit" class="btn waves-effect">{% trans %}Envoyer{% endtrans %}</button>
+                </div>
+                {{ form_end(form) }}
+                <hr>
+                <div class="contact-return-link">
+                    <a href="{{ path('home') }}">{% trans %}Retour à l'accueil{% endtrans %}</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+{% endblock %}
