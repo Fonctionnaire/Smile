@@ -5,7 +5,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{% trans %}Garde le sourire !{% endtrans %}" />
     <meta property="og:description"   content="{% trans %}Tu es unique et extraordinaire{% endtrans %}" />
-    <meta property="og:image"         content="{{ asset('img/uploads/' ~ fbImage.imageName) }}" />
+    <meta property="og:image"         content="{{ asset('img/uploads/' ~ fbImage.imageFilename) }}" />
 {% endblock %}
 {% block body %}
     <div id="fb-root"></div>
@@ -20,7 +20,7 @@
         {% endif %}
 
     </div>
-
+<img src="{{ asset('img/uploads/' ~ fbImage.imageFilename) }}">
     <section class="container">
         <div class="row">
             <div id="quote-block" class="col s12 m12 z-depth-3">

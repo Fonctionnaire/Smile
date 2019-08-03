@@ -19,39 +19,32 @@ class Image
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $imageFilename;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @return mixed
      */
-    private $imageName;
+    public function getImageFilename()
+    {
+        return $this->imageFilename;
+    }
 
-    public function getId(): ?int
+    /**
+     * @param mixed $imageFilename
+     */
+    public function setImageFilename($imageFilename): void
+    {
+        $this->imageFilename = $imageFilename;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
 
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
 
-        return $this;
-    }
-
-    public function getImageName(): ?string
-    {
-        return $this->imageName;
-    }
-
-    public function setImageName(string $imageName): self
-    {
-        $this->imageName = $imageName;
-
-        return $this;
-    }
 }
