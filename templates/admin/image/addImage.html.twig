@@ -1,0 +1,23 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+    <section class="row admin-form-container">
+        <div class="col s12 m6 offset-m3">
+            <h1>Ajouter une image</h1>
+            {{ form_start(form) }}
+            <div>
+                {{ form_row(form.image) }}
+            </div>
+            <div>
+                {{ form_label(form.imageName) }}
+                {{ form_widget(form.imageName) }}
+                {{ form_errors(form.imageName) }}
+            </div>
+            <div>
+                {{ form_rest(form) }}
+            </div>
+            <div>
+                <button type="submit" class="btn waves-effect center">Valider</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

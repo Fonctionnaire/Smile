@@ -5,11 +5,10 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{% trans %}Garde le sourire !{% endtrans %}" />
     <meta property="og:description"   content="{% trans %}Tu es unique et extraordinaire{% endtrans %}" />
-    <meta property="og:image"         content="{{ asset('img/social/beach-1852945_800.jpg') }}" />
+    <meta property="og:image"         content="{{ asset('img/uploads/' ~ fbImage.imageName) }}" />
 {% endblock %}
 {% block body %}
     <div id="fb-root"></div>
-
     <div class="circular-sb">
 
         {% if ee %}
@@ -60,5 +59,6 @@
     {% else %}
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
     {% endif %}
+    <script src="{{ asset('js/fbShare.js') }}"></script>
     <script src="{{ asset('js/twitterShare.js') }}"></script>
 {% endblock %}
