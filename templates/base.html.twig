@@ -18,11 +18,7 @@
         <meta name="description" content="{% trans %}Parce que tu es unique et extraordinaire{% endtrans %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
-        <meta property="og:url"           content="https://www.dailycomfort.com" />
-        <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="{% trans %}Garde le sourire !{% endtrans %}" />
-        <meta property="og:description"   content="{% trans %}Tu es unique et extraordinaire{% endtrans %}" />
-        <meta property="og:image"         content="{{ asset('img/social/beach-1852945_800.jpg') }}" />
+        {% block meta %}{% endblock %}
         <title>{% block title %}{% trans %}Garde le sourire !{% endtrans %}{% endblock %}</title>
         {% block stylesheets %}
             

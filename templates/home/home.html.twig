@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block lang %}{% if locale is same as('fr') %}fr{% else %}en{% endif %}{% endblock %}
+{% block meta %}
+    <meta property="og:url"           content="https://www.dailycomfort.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{% trans %}Garde le sourire !{% endtrans %}" />
+    <meta property="og:description"   content="{% trans %}Tu es unique et extraordinaire{% endtrans %}" />
+    <meta property="og:image"         content="{{ asset('img/social/beach-1852945_800.jpg') }}" />
+{% endblock %}
 {% block body %}
     <div id="fb-root"></div>
 
