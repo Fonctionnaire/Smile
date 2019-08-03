@@ -7,6 +7,7 @@ namespace App\Controller\Home;
 
 use App\Entity\EasterEgg;
 use App\Repository\EasterEggRepository;
+use App\Repository\ImageRepository;
 use App\Repository\QuoteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,16 +19,19 @@ class HomeController extends AbstractController
     /**
      * @Route("/{_locale}", name="home", methods={"GET"}, defaults={"_locale"="fr"}, requirements={"_locale"="%app.locales%"})
      */
-    public function home(QuoteRepository $quoteRepository, EasterEggRepository $easterEggRepository, Request $request)
+    public function home(QuoteRepository $quoteRepository, EasterEggRepository $easterEggRepository, ImageRepository $imageRepository, Request $request)
     {
         $locale = $request->getLocale();
         $now = new \DateTime();
         $quote = $quoteRepository->findOneQuoteByDate($now);
         $ee = $easterEggRepository->findLastEasterEgg();
+        $fbImage = $imageRepository->findOneImg();
+        dump($fbImage);
         return $this->render('home/home.html.twig', [
             'locale' => $locale,
             'quote' => $quote,
-            'ee' => $ee
+            'ee' => $ee,
+            'fbImage' => $fbImage
         ]);
     }
 }
