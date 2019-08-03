@@ -26,7 +26,6 @@ class HomeController extends AbstractController
         $quote = $quoteRepository->findOneQuoteByDate($now);
         $ee = $easterEggRepository->findLastEasterEgg();
         $fbImage = $imageRepository->findOneImg();
-        dump($fbImage);
         return $this->render('home/home.html.twig', [
             'locale' => $locale,
             'quote' => $quote,

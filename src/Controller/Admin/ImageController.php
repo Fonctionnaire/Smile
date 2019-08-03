@@ -30,7 +30,6 @@ class ImageController extends AbstractController
             $imgFile = $form['image']->getData();
             $fileName = $fileUploader->upload($imgFile);
             $img->setImageName($fileName);
-            dd($img);
             $em->persist($img);
             $em->flush();
             $this->addFlash('success', 'L\'image a bien été ajouté !');
