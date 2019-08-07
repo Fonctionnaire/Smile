@@ -17,7 +17,9 @@ class QuoteType extends AbstractType
         $builder
             ->add('frContent', TextareaType::class)
             ->add('enContent', TextareaType::class)
-            ->add('author', TextType::class)
+            ->add('author', TextType::class, [
+                'required' => false
+            ])
             ->add('releaseDate', DateType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
