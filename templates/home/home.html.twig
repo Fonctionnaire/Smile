@@ -1,6 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block lang %}{% if locale is same as('fr') %}fr{% else %}en{% endif %}{% endblock %}
-
+{% block url %}
+    {% if locale is same as('fr') %}
+        <link rel="canonical" href="https://www.dailycomforting.com/">
+    {% else %}
+        <link rel="canonical" href="https://www.dailycomforting.com/en">
+    {% endif %}
+{% endblock %}
 {% block body %}
     <div id="fb-root"></div>
     <div class="circular-sb">
