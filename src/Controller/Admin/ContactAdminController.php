@@ -39,7 +39,7 @@ class ContactAdminController extends AbstractController
     }
 
     /**
-     * @Route("/a-s/validate-contact/{id}", name="admin_validate_contact", methods={"POST"})
+     * @Route("/a-s/validate-contact/{id}", name="admin_validate_contact", methods={"GET", "POST"})
      * @IsGranted({"ROLE_ADMIN"})
      */
     public function validateContact(Contact $contact)
