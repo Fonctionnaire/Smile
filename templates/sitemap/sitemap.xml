@@ -2,80 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://dailycomforting.com/</loc>
+        <loc>https://dailycomforting.com/fr/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en"/>
+                href="https://dailycomforting.com/en/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/"/>
+                href="https://dailycomforting.com/fr/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://dailycomforting.com/en</loc>
+        <loc>https://dailycomforting.com/en/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en"/>
+                href="https://dailycomforting.com/en/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/"/>
+                href="https://dailycomforting.com/fr/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://dailycomforting.com/fr/contact</loc>
+        <loc>https://dailycomforting.com/fr/contact/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en/contact"/>
+                href="https://dailycomforting.com/en/contact/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/fr/contact"/>
+                href="https://dailycomforting.com/fr/contact/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://dailycomforting.com/en/contact</loc>
+        <loc>https://dailycomforting.com/en/contact/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en/contact"/>
+                href="https://dailycomforting.com/en/contact/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/fr/contact"/>
+                href="https://dailycomforting.com/fr/contact/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://dailycomforting.com/fr/mentions-legales</loc>
+        <loc>https://dailycomforting.com/fr/mentions-legales/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en/mentions-legales"/>
+                href="https://dailycomforting.com/en/mentions-legales/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/fr/mentions-legales"/>
+                href="https://dailycomforting.com/fr/mentions-legales/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://dailycomforting.com/en/mentions-legales</loc>
+        <loc>https://dailycomforting.com/en/mentions-legales/</loc>
         <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://dailycomforting.com/en/mentions-legales"/>
+                href="https://dailycomforting.com/en/mentions-legales/"/>
         <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://dailycomforting.com/fr/mentions-legales"/>
+                href="https://dailycomforting.com/fr/mentions-legales/"/>
         <lastmod>2019-08-07T15:39:44+00:00</lastmod>
         <priority>0.80</priority>
     </url>
