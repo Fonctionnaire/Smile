@@ -24,6 +24,11 @@ class HomeController extends AbstractController
         $locale = $request->getLocale();
         $now = new \DateTime();
         $quote = $quoteRepository->findOneQuoteByDate($now);
+
+        if($quote === null)
+        {
+            $quote = $quoteRepository->findLastQuote();
+        }
         $ee = $easterEggRepository->findLastEasterEgg();
         $fbImage = $imageRepository->findOneImg();
         return $this->render('home/home.html.twig', [

@@ -41,6 +41,15 @@ class QuoteRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+    public function findLastQuote()
+    {
+        return $this->createQueryBuilder('q')
+            ->orderBy('q.releaseDate', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Quote
